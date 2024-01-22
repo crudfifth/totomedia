@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import 'component/*'
+*
+  padding 0
+  margin 0
+  box-sizing border-box
+  font-family "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", YuGothic, "Yu Gothic", "メイリオ", Meiryo, sans-serif
+  font-weight bold
+  font-size 12px
+
+:root
+  --main-bg-color #58a9ef
+  --sub-gray-color #eaedf2
+  --sub-yellow-color #f9cf00
+  --sub-orange-color #f19f4d
+  --black-font #555
+  --white-font #fff
+  // --article-gradient-dark #0c002b
+  // --article-gradient-bright #1779ff
+  --article-gradient-dark #452601
+  --article-gradient-bright #ff8c01
+  --gradient-color1 linear-gradient(45deg, #bdb9ff, #67b8ff)
+html   
+  height 100%
+body  
+  max-width 100%
+  width 100%
+  height 100%
+  background-color var(--sub-gray-color)
+  background-size cover
+  background-color var(--sub-gray-color)
+  background-blend-mode lighten
+  background: linear-gradient(180deg, hsla(335, 103%, 95%, 1) 0%, hsla(201, 100%, 81%, 1) 100%); 
+  color var(--black-font)
+  overflow-y scroll
+  overflow-x hidden
+//--------------------------------------------------------------------
+// *** Magic starts HERE
+diameter = 35vmax
+.aurora
+  background #ffffff
+  position relative
+  &:before,
+  &:after
+    content ''
+    display block
+    position absolute
+    width 1px
+    height 1px
+    border-radius 100%
+    opacity .13
+    z-index -1
+    // transform rotate(55deg)
+  &:before
+    box-shadow 0 0 diameter diameter rgba(53, 53, 255, 0.823)
+    animation hue 5s 0s linear infinite, move1 10s 0s linear infinite
+  &:after
+    box-shadow 0 0 diameter diameter rgba(77, 203, 253, 0.789)
+    animation hue 10s 0s linear infinite, move2 20s 0s linear infinite
+  @keyframes hue
+    0%
+      filter hue-rotate(0deg)
+    100%
+      filter hue-rotate(360deg)
+  @keyframes move1
+    0%
+      top 0vh
+      left 50vw
+    25%
+      left 0vw
+    50%
+      top 100vh
+    75%
+      left 100vw
+    100%
+      top 0vh
+      left 50vw
+  @keyframes move2
+    0%
+      top 50vh
+      left 100vw
+    25%
+      top 100vh
+    50%
+      left 0vw
+    75%
+      top 0vh
+    100%
+      top 50vh
+      left 100vw
+
+
+.sky {
+  min-height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #bfdfec;
+  font-family: system-ui, calibri, serif;
+  background-repeat: repeat-x;
+  background-image: url("https://i.stack.imgur.com/b7z29.png");
+  animation: movement 10s linear infinite;
+}
+@keyframes movement {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 560px 0px;
+  }
+}
+
+

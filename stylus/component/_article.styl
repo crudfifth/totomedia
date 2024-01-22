@@ -1,0 +1,48 @@
+.article-wrapper 
+  flex-basis 70%
+.article
+  width 90%
+  margin 50px
+  padding 40px
+  background-color #fff
+  border-radius 3px
+  box-shadow 3px 3px 3px rgba(202, 202, 202, 0.1), -3px -3px 3px rgba(202, 202, 202, 0.1) 
+  overflow auto
+  .article-date
+    display block
+    margin-bottom 20px
+    text-align right
+    color #999
+  .article-h2
+    position: relative;
+    margin 30px 5px
+    padding: 0.2em 0.5em;
+    border: dashed 2px white;
+    background: #dfefff;
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    color: #454545;
+    &:after
+      position: absolute;
+      content: '';
+      left: -7px;
+      top: -7px;
+      border-width: 0 0 15px 15px;
+      border-style: solid;
+      border-color: #fff #fff #a8d4ff;
+      box-shadow 1px 1px 1px rgba(0, 0, 0, 0.15)
+  .article-image
+    display block
+    width 95%
+    height 50vh
+    margin 10vh auto
+    object-fit cover
+  .article-text
+    line-height 1.7rem
+    letter-spacing 0.2rem
+
+.comment
+  width 100%
+  .comment-form
+    display flex
+  .comment-list
+    color black

@@ -1,0 +1,444 @@
+articleImageSize = 30vh
+linew = 5vw
+lineh = 5vh
+ul
+  width 90%
+  margin 0 auto 
+  .article-wrapper 
+    .article-box
+      border-radius 3px
+      display flex
+      align-items center
+      height 29vh
+      margin 40px
+      background-color white
+      transition-duration .7s
+      box-shadow 0 20px 50px rgba(0,0,0,0.1)//
+      overflow hidden
+      .article-image
+        flex-basis 35%
+        height 29vh
+        &:before
+          content ''
+          animation fadeout 1s linear 
+          @keyframes fadeout
+            0%
+              opacity 1
+            100%
+              opacity 0
+      &:hover
+        box-shadow 11px 20px 50px #ff8c0133,-11px -20px 50px #ff8c0133
+        .article-text
+          .category-label
+            background-color orange
+            margin-right 4px
+            margin-top 3px
+          h2 
+            border-left 30px groove orange
+            margin-right 2px 
+            padding-left 10px
+            letter-spacing 0.1rem
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 2px #9191919c;
+            transition .7s ease-in-out
+          .min-text  
+            color #999
+            background: linear-gradient(180deg, #999, #999 30%, white)
+            -webkit-background-clip text
+            -webkit-text-fill-color transparent
+          .read-more
+            width 100%
+            background-color orange
+            transition .2s ease-in-out
+            letter-spacing 1rem
+            justify-content center
+            transform translate(-4px, -3px)
+            span 
+              transition .2s ease-in-out
+              width 100%
+              p.rm  
+                display none
+                animation fadeout .3s 
+                font-family 'Raleway', sans-serif
+              p.cm  
+                display block
+                font-family 'Raleway', sans-serif
+            i  
+              animation fadeout 1s ease-in-out infinite 
+        box-shadow 0 10px 20px #8ac9f52
+        transform scale(1.05)
+        transition-duration .7s
+        .article-image
+          height articleImageSize
+          line-height articleImageSize
+          padding 2px 2px 0 2px
+          .photo-motion:nth-of-type(1)
+            &:before
+              content ''
+              width 50px
+              height 50px
+              display block
+              bottom 15px
+              right 20px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              box-shadow 3px -3px 0px #fff
+              transform rotate(90deg)
+              overflow hidden
+              animation hover-line1 1s ease-in-out
+              @keyframes hover-line1
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  bottom 20px
+                  right 25px
+                30%
+                  box-shadow 0 0 0 #fff
+                  width 50px
+                  height 50px
+            &:after
+              content ''
+              width 50px
+              height 50px
+              display block
+              top 15px
+              left 20px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(-90deg)
+              box-shadow 3px -3px 0px #fff
+              overflow hidden
+              animation hover-line2 1s ease-in-out
+              @keyframes hover-line2
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  top 20px
+                  left 25px
+                30%
+                  box-shadow 0 0 0 #fff
+                  width 50px
+                  height 50px
+          .photo-motion:nth-of-type(2)
+            &:before
+              content ''
+              width 50px
+              height 50px
+              display block
+              bottom 15px
+              left 20px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(180deg)
+              box-shadow 3px -3px 0px #fff
+              overflow hidden
+              animation hover-line3 1s ease-in-out
+              @keyframes hover-line3
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  bottom 20px
+                  left 25px
+                30%
+                  box-shadow 0 0 0 #fff
+                  width 50px
+                  height 50px
+            &:after
+              content ''
+              width 50px
+              height 50px
+              display block
+              top 15px
+              right 20px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(-0deg)
+              box-shadow 3px -3px 0px #fff
+              overflow hidden
+              animation hover-line4 1s ease-in-out
+              @keyframes hover-line4
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  top 20px
+                  right 25px
+                30%
+                  box-shadow 0 0 0 #fff
+                  width 50px
+                  height 50px
+          .photo-motion:nth-of-type(3)
+            &:before
+              content ''
+              width 25px
+              height 25px
+              display block
+              bottom 25px
+              left 30px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(180deg)
+              overflow hidden
+              animation hover-line5 .6s ease-in-out
+              @keyframes hover-line5
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  bottom lineh
+                  left linew
+                10%
+                  box-shadow 0 0 0 #fff
+            &:after
+              content ''
+              width 25px
+              height 25px
+              display block
+              top 25px
+              right 30px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(-0deg)
+              overflow hidden
+              animation hover-line6 .6s ease-in-out
+              @keyframes hover-line6
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  top lineh
+                  right linew
+                10%
+                  box-shadow 0 0 0 #fff
+          .photo-motion:nth-of-type(4)
+            &:before
+              content ''
+              width 25px
+              height 25px
+              display block
+              top 25px
+              left 30px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(-90deg)
+              overflow hidden
+              animation hover-line7 .6s ease-in-out
+              @keyframes hover-line7
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  top lineh
+                  left linew
+                10%
+                  box-shadow 0 0 0 #fff
+            &:after
+              content ''
+              width 25px
+              height 25px
+              display block
+              bottom 25px
+              right 30px
+              border-top 1px solid white
+              border-right 1px solid white
+              position absolute
+              z-index 3
+              transform rotate(90deg)
+              overflow hidden
+              animation hover-line8 .6s ease-in-out
+              @keyframes hover-line8
+                0%
+                  box-shadow 5px -5px 0px #fff
+                  width 100px
+                  height 100px
+                  bottom lineh
+                  right linew
+                10%
+                  box-shadow 0 0 0 #fff
+
+          .photo
+            height 100%
+            filter blur(2px) brightness(1.2)
+          &:before  
+            content 'READ MORE'
+            color white
+            font-family 'Raleway', sans-serif
+            font-size 0.9vw
+            display inline-block
+            width 99%
+            height 98%
+            background-color rgba(0,0,0,.7)
+            position absolute
+            z-index 1
+            text-align center
+            vertical-align middle
+            animation fadein .7s ease-in-out
+            letter-spacing 0.5rem
+            @keyframes fadein
+              0% 
+                opacity 0
+                font-size 0
+                letter-spacing 0rem
+                color white
+              30%
+                opacity 1
+                font-size 1.4vw
+                font-weight bold
+                box-shadow 5px 0px 0px var(--main-bg-color)
+                text-shadow 0px 40px 0px #ffffffff, 0 -40px 0px #ffffffff, 40px 0px 0px #ffffffff, -40px 0px 0px #ffffffff
+              100% 
+                letter-spacing .5rem
+                font-size 0.9vw
+                color white
+        .line-animation:nth-child(1)
+          z-index 2
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 3px
+          background linear-gradient(to right, var(--article-gradient-dark), var(--article-gradient-bright))
+          animation animate1 2s linear infinite
+          @keyframes animate1
+            0%
+              transform translateX(-100%)
+            100%
+              transform translateX(100%)
+        .line-animation:nth-child(2)
+          z-index 2
+          position absolute
+          top 0
+          right 0
+          width 4px
+          height 100%
+          background linear-gradient(to bottom, var(--article-gradient-dark), var(--article-gradient-bright))
+          animation animate2 2s linear infinite
+          animation-delay 1s
+          @keyframes animate2
+            0%
+              transform translateY(-100%)
+            100%
+              transform translateY(100%)
+        .line-animation:nth-child(3)
+          z-index 2
+          position absolute
+          bottom 0
+          left 0
+          width 100%
+          height 3px
+          background linear-gradient(to left, var(--article-gradient-dark), var(--article-gradient-bright))
+          animation animate3 2s linear infinite
+          @keyframes animate3
+            0%
+              transform translateX(100%)
+            100%
+              transform translateX(-100%)
+        .line-animation:nth-child(4)
+          z-index 2
+          position absolute
+          top 0
+          left 0
+          width 4px
+          height 100%
+          background linear-gradient(to top, var(--article-gradient-dark), var(--article-gradient-bright))
+          animation animate4 2s linear infinite
+          animation-delay 1s
+          @keyframes animate4
+            0%
+              transform translateY(100%)
+            100%
+              transform translateY(-100%)
+        .photo
+            height articleImageSize
+      .article-image
+        position relative
+      .photo
+        width 100%
+        height articleImageSize
+        object-fit:cover;
+      .article-text
+        position relative
+        display flex
+        flex-flow column
+        flex-basis 65%
+        width 100%
+        height 100%
+        color var(--black-font)
+        overflow hidden
+        .category-label
+          flex-basis 10%
+          align-self flex-end
+          padding 3px 10px
+          color #fff
+          font-size 0.8vw
+          border-radius 2px
+          background-color var(--main-bg-color)
+        h2  
+          display flex
+          flex-basis 20%
+          margin 10px 0px 10px 20px
+          font-size 1.1rem
+          align-items center
+          text-decoration underliine
+        time  
+          flex-basis 10%
+          margin-left 20px
+          font-size 0.8rem
+          color #999
+        .min-text  
+            flex-basis 50%
+            // display -webkit-box
+            // -webkit-box-orient vertical
+            // -webkit-line-clamp 3
+            height 5vh
+            margin 15px 20px 10px 20px
+            font-size 0.8rem
+            letter-spacing 0.1rem
+            color var(--black-font)
+            background: linear-gradient(180deg, #545454, #565656 30%, white)
+            -webkit-background-clip text
+            -webkit-text-fill-color transparent
+        .read-more
+          flex-basis 10%
+          background-color var(--main-bg-color)
+          display flex
+          justify-content end
+          color white
+          letter-spacing 0.3rem
+          border-radius 2px
+          width 100%
+          padding 2px 10px
+          border-radius 2px
+          text-align center
+          margin 0 auto
+          span  
+            display block
+            width 35%
+            font-family 'Raleway', sans-serif 
+            .cm
+              display none
+          i
+            display flex
+            vertical-align middle
+            align-items center
+            justify-content center
+
+.rm, .cm
+  font-family: 'Raleway',sans-serif;

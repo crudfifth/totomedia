@@ -1,0 +1,110 @@
+aside  
+  width 25%
+  margin 45px auto
+
+.aside-category, .aside-tags
+  width 100%
+  height 200px
+  margin 0px auto 20px
+  padding 40px
+  background-color white
+  letter-spacing .1rem
+  text-align center
+  font-family 'Raleway', sans-serif
+  box-shadow 3px 3px 3px rgba(173, 173, 173, 0.488)
+  transition .4s ease-in
+  &:hover
+    transform scale(1.05)
+    transition .2s ease-out
+
+.aside-search 
+  width 100%
+  border-radius 10px
+  margin-bottom 20px
+  box-shadow 3px 3px 3px rgba(173, 173, 173, 0.488)
+  .search-form
+  width 100%
+    display flex
+    .search-input, .search-button
+      display block
+      padding 5px 10px
+      border none
+      letter-spacing .2rem
+    .search-input
+      width 100%
+      border-radius 5px 10px 10px 5px
+      font-size 0.8rem
+    .search-input:focus-visible
+      outline unset 
+    .search-button 
+      font-size 1.2rem
+      color white 
+      border-radius 0px 10px 10px 0px
+      background var(--gradient-color1)
+      
+
+.aside-profile 
+  width 100%
+  margin-bottom 20px
+  background-color white
+  box-shadow 3px 3px 3px rgba(173, 173, 173, 0.488)
+  transition .3 ease-out
+  &:hover 
+    transform scale(1.05)
+    transition .3s ease-in
+  a  
+    display block
+    width 100%
+    height 100%
+    padding 40px
+    text-align center
+    font-family 'Raleway', sans-serif
+    color var(--black-font)
+    i 
+      padding-left 10px
+    img 
+      display block
+      width 50%
+      margin 0 auto
+    p   
+      font-size 0.7rem
+
+.aside-request  
+  width 100%
+  padding 40px
+  margin-bottom 20px
+  background-color white
+  box-shadow 3px 3px 3px rgba(173, 173, 173, 0.488)
+  transition .3 ease-out
+  &:hover
+    transform scale(1.05)
+    transition .2s ease-out
+  .aside-headline  
+    text-align center
+    font-family 'Raleway', sans-serif
+    padding-bottom 15px
+    i  
+      padding-left 10px
+  ul 
+    display flex
+    flex-wrap wrap
+    text-align left
+    li  
+      width 50%
+      a  
+        color var(--black-font)
+        font-size 0.6rem
+
+.aside-category
+  .cat  
+    padding 2px 5px
+    border-radius 2px
+    background-color var(--black-font)
+    color white
+    font-size 0.7rem
+  i  
+    padding-left 10px
+
+.aside-tags 
+  i  
+    padding-left 10px

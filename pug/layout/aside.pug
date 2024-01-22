@@ -1,0 +1,41 @@
+aside
+  section.aside-search
+    form.search-form(method="get")
+      input.search-input(type="text" name="search" placeholder="SEARCH")
+      button.search-button(type="submit"): i.fa-solid.fa-magnifying-glass
+
+  section.aside-profile
+    a(href!="<?= '/php/other/profile.php'; ?>")
+      |  PROFILE
+      i.fa-regular.fa-id-card
+      br
+      img(src!="<?= '/img/site_img/totomedia.jpg'; ?>")
+      p 当サイトを運営しているメンバープロフィールの詳細はこちらから
+  section.aside-request
+    .aside-headline
+      |  REQUEST
+      i.fa-solid.fa-envelope-open-text
+    ul 
+      li: a(href="#") WEBサイト制作
+      li: a(href="#") ゲーム制作
+      li: a(href="#") システム開発
+      li: a(href="#") 動画編集/映像制作
+      li: a(href="#") イラスト制作
+      li: a(href="#") ライティング
+      li: a(href="#") ミキシング
+      li: a(href="#") モデリング
+      li: a(href="#") 歌唱
+      li: a(href="#") 楽曲制作
+      li: a(href="#") ギター演奏
+      li: a(href="#") ピアノ演奏
+  section.aside-category
+    |  CATEGORY
+    i.fa-solid.fa-sitemap
+    br
+    . 
+      <?php foreach ($categories as $category) : ?>
+        <label class="cat"><?= $category['category_name']; ?></label>
+      <?php endforeach; ?>
+  section.aside-tags
+    |  TAG
+    i.fa-solid.fa-tags

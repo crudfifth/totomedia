@@ -1,0 +1,46 @@
+.main  
+  display flex
+  justify-content center
+  width 80%
+  margin 0 auto
+  .top 
+    width 70%
+    .breadcrumbs
+      display block
+      margin 10px 40px
+      color #999
+      i  
+        color var(--main-bg-color)
+        font-size 1.3rem
+        text-shadow none
+        transition .4s ease-out
+        &:hover
+          transform scale(1.5)
+          margin 0 10px
+          color #58a9efd1
+          text-shadow: 3px 3px 5px #58a9ef61, 0px -5px 10px #58a9ef61
+          transition .4s ease-in 
+      .awesome  
+        margin-right 10px
+        font-size 1.3rem
+    .pagination 
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      margin: 5vh auto;
+      .pagination-btn
+        padding 20px
+        border none
+        margin 15px
+        background: var(--gradient-color1)
+        color white
+        border-radius 3px
+        box-shadow: 1px 1px 13px #9ab8ff
+        transition .4s ease-out
+        &:hover
+          opacity 0.7
+          transform scale(1.1) translateY(-10px)
+          transition .4s ease-in
+
+
+

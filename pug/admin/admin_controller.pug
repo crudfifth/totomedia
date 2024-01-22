@@ -1,0 +1,39 @@
+. 
+  <?php 
+  include($_SERVER['DOCUMENT_ROOT'].'/php/common/pdo.php');
+
+  $num = $dbh->query("
+    SELECT count(*)
+    FROM totomedia_db.articles
+  ")->fetch(PDO::FETCH_ASSOC);
+
+  ?>
+doctype
+html(lang="ja")
+  head 
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/layout/head.php'); ?>
+    link(rel="stylesheet" href!="<?= '/css/admin.css'; ?>")
+  body 
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/object/_admin_menu.php'); ?>
+    section.admin-section
+      span.subheading 2024年の目標「記事を100本作成する」
+      br
+      span 2024年に書いた記事数は<?= $num['count(*)'];?>本です。
+      br
+      .circle-graph
+        svg.admin-graph  
+          circle.admin-circle.base(CX="90" cy="90" r="70")
+          circle.admin-circle.line(CX="90" cy="90" r="70")
+        .number  
+          h3.title
+            <?= $num['count(*)']; ?>
+            span %
+      p.text ノルマ達成率
+          
+    script(type="text/javascript" src="/js/main.js")
+    //- 以下グラフの処理
+    script 
+      | let num = 440-(440*'<?= $num['count(*)'];?>')/100;
+      | $(function(){
+      |   $('.line').css({'stroke-dashoffset':num,'color':'#03a9f4'});
+      | });

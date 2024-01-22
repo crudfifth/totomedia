@@ -1,0 +1,46 @@
+. 
+  <?php 
+  session_start();
+  if (empty($_SESSION['name'])) :
+    header('Location: /php/auth/login.php');
+  endif ;
+  ?>
+div.height-block
+  section.admin-menu
+    a.admin-a(href="/php/admin/admin_controller.php"): h1: img.admin-icon(src!="<?= '/img/site_img/transparent.png'; ?>")
+    button.admin-button(onclick='location.href="/php/admin/admin_controller.php"')
+      i.fa-solid.fa-house
+      | ホーム
+    button.admin-button(onclick='location.href="/php/admin/admin_article_controller.php"')
+      i.fa-solid.fa-newspaper
+      | アーティクル
+    button.admin-button(onclick='location.href="/php/admin/admin_category_controller.php"')
+      i.fa-solid.fa-sitemap
+      | カテゴリ
+    button.admin-button(onclick='location.href="/php/admin//admin_tag_controller.php"')
+      i.fa-solid.fa-tag
+      | タグ
+    button.admin-button(onclick='location.href="/php/admin/admin_writer_controller.php"')
+      i.fa-solid.fa-user-pen
+      | ライター
+    button.admin-button(onclick='location.href="/php/admin/admin_comment_controller.php"')
+      i.fa-solid.fa-comment
+      | コメント
+    button.admin-button(onclick='location.href="/php/admin/admin_facade_controller.php"')
+      i.fa-solid.fa-brush
+      | ファサード
+    button.admin-button(onclick='location.href="/php/admin/admin_document_controller.php"')
+      i.fa-solid.fa-folder-open
+      | ドキュメント
+    button.admin-button(onclick='location.href="/php/admin/admin_analytics_controller.php"')
+      i.fa-solid.fa-chart-line
+      | アナリティクス
+    button.admin-button(onclick='location.href="/php/admin/admin_chat_controller.php"')
+      i.fa-solid.fa-chalkboard-user
+      | チャット
+    .admin-menu-login
+      a(href="/php/auth/profile-setting.php")
+        span(style="color:white;") <?= $_SESSION["name"]; ?>
+
+      
+      

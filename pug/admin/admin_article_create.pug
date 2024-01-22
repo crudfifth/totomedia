@@ -1,0 +1,111 @@
+. 
+  <?php 
+
+    include($_SERVER['DOCUMENT_ROOT'].'/php/common/pdo.php');
+
+    if ($cat_cnt["cnt"] == 0) {
+
+      $default = $dbh->query("
+        INSERT INTO totomedia_db.categories(category_name) 
+        VALUE ('未分類')
+      ")->fetch(PDO::FETCH_ASSOC);
+
+      header('Location: admin_article_create.php');
+
+    }
+
+    if ($wri_cnt["cnt"] == 0) {
+
+      $default = $dbh->query("
+        INSERT INTO totomedia_db.writer(writer_name)
+        VALUE ('匿名')
+      ")->fetch(PDO::FETCH_ASSOC);
+
+      header('Location: admin_article_create.php');
+
+    }
+
+    $dbh = null;
+
+  ?>
+  
+doctype
+html(lang="ja")
+  head 
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/layout/head.php'); ?>
+    link(rel="stylesheet" href!="<?= '/css/admin.css'; ?>")
+  body 
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/object/_admin_menu.php'); ?>
+    form.article-create-form(action="/php/process/admin_article_create_process.php" method="post" enctype="multipart/form-data")
+      section.admin-operation
+        h2(style="font-size:1.2rem;") ①記事内容
+        span(onclick="a(this)") タイトル
+        br
+        input#headline(name="title" style="display:block;width:50%;" type="text" onkeyup="ShowLenT(value)" required)
+        button(type="button" onclick="convertH1()") 反映
+        br
+        span(id="outLenT") 0文字
+        br
+        br
+        span 記事
+        br
+        section#article-headline
+        section#img(style="display:block;width:50%;margin:0 auto;")
+          img(id="preview2" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;")
+        section#article
+        //- input#hidden-article-headline(type="hidden" name="title")
+        //- input#hidden-article-headline-name(type="hidden" name="title")
+        //- input#hidden-article(type="hidden" name="content")
+        br
+        textarea#element(name="contents" style="height:5rem;" onkeyup="ShowLenC(value);")
+        br
+        button(type="button" onclick="convertH2()") 小見出し
+        button(type="button" onclick="convertP()") 段落
+        br
+        span(id="outLenC") 0文字
+        br
+        br
+      section.admin-article-property 
+        h2(style="font-size:1.2rem;") ②記事設定
+        label サムネイル
+        br
+        input(type="file" accept="image/*" name="thumb" onchange="previewImage(this);")
+        br
+        | プレビュー:
+        br
+        img(id="preview1" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;")
+        br
+        br
+        label カテゴリ:
+        select(name="category")
+          . 
+            <?php 
+              foreach ($categories as $category) {
+                echo "<option value=".$category['category_name'].">".$category['category_name']."</option>";
+              }
+            ?>
+        br
+        br
+        label 執筆者:
+        <?= $_SESSION['name']; ?>
+        input(type="hidden" name="writer" value!="<?= $_SESSION['name']; ?>")
+        br
+        br
+        label 公開設定:
+        input(type="radio" name="status" value="private" checked)
+        span 非公開
+        input(type="radio" name="status" value="public") 
+        span 公開
+        br
+        br
+        label オススメ:
+        input(type="radio" name="recommend" value="0" checked)
+        span しない
+        input(type="radio" name="recommend" value="1") 
+        span する
+        br
+        br
+        input(type="submit" name="add_article" value="送信")
+        br
+        br
+    script(type="text/javascript" src="/js/main.js")

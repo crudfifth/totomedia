@@ -1,0 +1,17 @@
+doctype
+html(lang="ja")
+  head 
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/layout/head.php'); ?>
+    link(rel="stylesheet" href!="<?= '/css/admin.css'; ?>")
+  body 
+    section.admin-login
+      form.admin-login-form(action="/php/process/login_process.php" method="POST")
+        h1.admin-login-head Log In
+        .mail-address
+          i.fa-solid.fa-at
+          input(type="email" name="mail_address" placeholder="Your Email")
+        .password
+          i.fa-solid.fa-key
+          input(type="password" name="password" placeholder="Your Password")
+        .login-button
+          button(type="submit") SUBMIT
