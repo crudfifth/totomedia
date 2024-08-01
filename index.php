@@ -4,6 +4,5 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/layout/main.php'); ?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/layout/footer.php'); ?>
     <script type="text/javascript" src="<?= '/js/main.js'; ?>"></script>
-    <script></script>
   </body>
 </html>
